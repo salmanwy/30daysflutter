@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thirty_days_flutter/pages/login_page.dart';
+import 'package:thirty_days_flutter/utils/routes.dart';
 import 'pages/home_page.dart';
 
 void main() {
@@ -12,15 +13,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       themeMode: ThemeMode.light,
       theme: ThemeData(primarySwatch: Colors.deepPurple),
-      debugShowCheckedModeBanner: false,
+      //debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
       initialRoute: "/",
       routes: {
         "/": (context) => LoginPage(),
-        "/home": (context) => HomePage(),
-        "/login": (context) => LoginPage()
+        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => LoginPage()
       },
     );
   }
